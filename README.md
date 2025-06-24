@@ -62,9 +62,5 @@ Juegodememoriaa/
 - Victoria: `FINISH.mp3`
 - Derrota: `GAME OVER.mp3`
 
-## Créditos
-- Desarrollador: [Tu Nombre]
-- Imágenes y sonidos: Recursos propios y libres de derechos.
-
 ## Licencia
 Este proyecto es de uso libre para fines educativos y personales. 
