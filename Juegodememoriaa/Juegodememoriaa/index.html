@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALATRO - Juego de Memoria</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <!-- Pantalla de inicio para solicitar nombre -->
+    <div id="pantalla-inicial" class="pantalla">
+        <h1>BALATRO</h1>
+        <h2>Juego de Memoria</h2>
+        <form id="formulario-nombre">
+            <div class="campo">
+                <label for="nombre-jugador">Ingresa tu nombre:</label>
+                <input type="text" id="nombre-jugador" required>
+            </div>
+            <button type="submit" class="boton">¡Comenzar!</button>
+        </form>
+        
+        <!-- Tabla de jugadores registrados -->
+        <div class="seccion-tabla">
+            <h3>Jugadores Registrados</h3>
+            <div id="tabla-jugadores-container">
+                <table id="tabla-jugadores" class="tabla-records">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Tiempo de Juego</th>
+                            <th>Intentos</th>
+                            <th>Tiempo Restante</th>
+                            <th>Nivel</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-jugadores-body">
+                        <!-- Aquí se cargarán dinámicamente los jugadores -->
+                    </tbody>
+                </table>
+                <p id="sin-jugadores" class="mensaje-tabla oculto">No hay jugadores registrados aún.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pantalla principal del juego -->
+    <div id="pantalla-juego" class="pantalla oculto">
+        <header>
+            <h1>BALATRO</h1>
+            <div class="panel-info">
+                <div class="info">
+                    <span>Jugador: <span id="nombre-display"></span></span>
+                    <span>Intentos: <span id="intentos">0</span></span>
+                    <span>Aciertos: <span id="aciertos">0</span></span>
+                    <span>Tiempo: <span id="tiempo">00:00</span></span>
+                    <span>Nivel: <span id="nivel">1</span></span>
+                </div>
+                <button id="iniciar" class="boton boton-verde">Iniciar Juego</button>
+            </div>
+        </header>
+
+        <main>
+            <div id="tablero" class="tablero"></div>
+        </main>
+
+        <div id="mensaje" class="mensaje oculto">
+            <div class="mensaje-contenido">
+                <h3 id="mensaje-texto"></h3>
+                <button id="mensaje-cerrar" class="boton">Aceptar</button>
+            </div>
+        </div>
+
+        <div id="victoria" class="victoria oculto">
+            <div class="victoria-contenido">
+                <h2>¡Felicidades!</h2>
+                <p>¡Has completado el nivel <span id="nivel-completado"></span>!</p>
+                <div class="estadisticas">
+                    <p>Intentos: <span id="intentos-final"></span></p>
+                    <p>Tiempo: <span id="tiempo-final"></span></p>
+                </div>
+                <button id="siguiente-nivel" class="boton boton-verde">Siguiente Nivel</button>
+                <button id="reiniciar" class="boton">Reiniciar</button>
+            </div>
+        </div>
+
+        <div id="derrota" class="derrota oculto">
+            <div class="derrota-contenido">
+                <h2>¡Tiempo agotado!</h2>
+                <p>No has podido completar el nivel a tiempo</p>
+                <button id="reintentar" class="boton boton-verde">Reintentar</button>
+                <button id="volver-menu" class="boton">Volver al menú</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección para mostrar récords -->
+    <div id="pantalla-records" class="pantalla oculto">
+        <h1>Récords</h1>
+        <div id="lista-records"></div>
+        <button id="volver" class="boton">Volver al juego</button>
+    </div>
+
+    <script src="funciones.js"></script>
+</body>
+</html>
